@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FaDownload } from "react-icons/fa"; // استيراد أيقونة التحميل لزر الـ CV
-import HeroImage from "../assets/Alisayed1.jpg";
-import MyCV from "../assets/Ali_Sayed_Resume.pdf"; // 1. استيراد الـ CV هنا كأصل
+import MyProfilePic from "../assets/Alisayed1.jpg"; // استيراد الصورة كمتغير
 export const Hero = () => {
   return (
     <section className="bg-background text-white min-h-[80vh] flex items-center overflow-hidden">
@@ -20,9 +19,9 @@ export const Hero = () => {
             style={{ boxShadow: "0 20px 30px -10px #d4af37" }}
           >
             <img
-              src={HeroImage}
+              src={MyProfilePic}
               alt="Ali Sayed"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
           </motion.div>
         </motion.div>

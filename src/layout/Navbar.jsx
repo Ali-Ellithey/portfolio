@@ -2,7 +2,7 @@ import { useState } from "react";
 import Logo from "../assets/Alisayed1.jpg";
 
 export const Navbar = () => {
-  // حالة (State) للتحكم في فتح وإغلاق قائمة الموبايل
+  // حالة (State) للتحكم في فتح وإغلاق قائمة الموبايل الجانبية
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -24,16 +24,16 @@ export const Navbar = () => {
               />
             </div>
 
-            {/* اسمك بجانب اللوجو مع تأثير هوفر ناعم */}
+            {/* اسمك بجانب اللوجو */}
             <span className="text-2xl font-bold text-white tracking-wide transition-colors duration-300 group-hover:text-highlight">
               Ali Sayed
             </span>
           </div>
         </a>
 
-        {/* أيقونة القائمة (Hamburger Menu) تظهر فقط في الموبايل */}
+        {/* أيقونة القائمة (Hamburger Menu) تظهر فقط في الموبايل وستكون أعلى القائمة الجانبية عند الفتح */}
         <button
-          className="md:hidden text-white hover:text-highlight focus:outline-none transition-colors"
+          className="md:hidden text-white hover:text-highlight focus:outline-none transition-colors z-50 relative"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
@@ -106,49 +106,59 @@ export const Navbar = () => {
         </ul>
       </nav>
 
-      {/* القائمة المنسدلة لشاشات الموبايل */}
+      {/* خلفية معتمة (Overlay) تظهر عند فتح القائمة، وتغلقها عند الضغط في أي مكان فارغ */}
       {isOpen && (
-        <div className="md:hidden bg-surface border-b border-border absolute w-full left-0 top-full">
-          <ul className="flex flex-col space-y-4 px-6 py-4">
-            <li>
-              <a
-                href="#home"
-                className="block text-white hover:text-highlight transition-colors text-lg"
-                onClick={() => setIsOpen(false)} // إغلاق القائمة عند الضغط
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                className="block text-white hover:text-highlight transition-colors text-lg"
-                onClick={() => setIsOpen(false)}
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                href="#projects"
-                className="block text-white hover:text-highlight transition-colors text-lg"
-                onClick={() => setIsOpen(false)}
-              >
-                Projects
-              </a>
-            </li>
-            <li>
-              <a
-                href="#contact"
-                className="block text-white hover:text-highlight transition-colors text-lg"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
+        <div
+          className="md:hidden fixed inset-0 bg-black bg-opacity-60 z-40 transition-opacity"
+          onClick={() => setIsOpen(false)}
+        />
       )}
+
+      {/* القائمة الجانبية (Sidebar) لشاشات الموبايل - تفتح من اليمين وتتوسطها الروابط */}
+      <div
+        className={`md:hidden fixed top-0 right-0 h-full w-[70%] sm:w-[50%] bg-surface border-l border-border z-40 shadow-2xl transition-transform duration-300 ease-in-out flex items-center justify-center ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <ul className="flex flex-col space-y-8 text-center w-full px-6">
+          <li>
+            <a
+              href="#home"
+              className="block text-white hover:text-highlight transition-colors text-xl font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              className="block text-white hover:text-highlight transition-colors text-xl font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#projects"
+              className="block text-white hover:text-highlight transition-colors text-xl font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              Projects
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              className="block text-white hover:text-highlight transition-colors text-xl font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 };
