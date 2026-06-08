@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { FaDownload } from "react-icons/fa";
 import MyProfilePic from "../assets/Alisayed1.jpg";
+
 export const Hero = () => {
   return (
-    <section className="bg-background text-white min-h-[80vh] flex items-center overflow-hidden">
-      <div className="container mx-auto px-4 py-20 flex flex-col md:flex-row-reverse items-center justify-between gap-12">
+    // تم تعديل min-h إلى ليتناسب مع البادينج ويمنع المساحات الفارغة المبالغ فيها
+    <section className="bg-background text-white min-h-[75vh] flex items-center overflow-hidden relative">
+      {/* 💡 هنا السر: أضفنا max-w-6xl ليكون متطابقاً تماماً مع سكشن المشاريع بالملي */}
+      <div className="container mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row-reverse items-center justify-between gap-12 max-w-6xl">
         {/* قسم الصورة (جهة اليمين) */}
         <motion.div
           initial={{ opacity: 0, x: 60, scale: 0.95 }}
@@ -15,7 +18,7 @@ export const Hero = () => {
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 aspect-square rounded-2xl overflow-hidden border-b-4 border-highlight"
+            className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-90 lg:h-90 aspect-square rounded-2xl overflow-hidden border-b-4 border-highlight"
             style={{ boxShadow: "0 20px 30px -10px #d4af37" }}
           >
             <img
@@ -56,9 +59,8 @@ export const Hero = () => {
             fully responsive user interfaces using the latest web technologies.
           </motion.p>
 
-          {/* 4. أزرار التفاعل (استعراض المشاريع + تحميل الـ CV) */}
+          {/* أزرار التفاعل */}
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
-            {/* زر استعراض المشاريع الرئيسي */}
             <motion.a
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -72,21 +74,19 @@ export const Hero = () => {
               View My Work
             </motion.a>
 
-            {/* زر تحميل الـ CV الاحترافي المضاف حديثاً */}
             <motion.a
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.85 }} // تأثير التوالي الأنيق بعد الزر الأول
+              transition={{ duration: 0.5, delay: 0.85 }}
               whileHover={{
                 scale: 1.05,
                 y: -2,
                 backgroundColor: "rgba(212, 175, 55, 0.1)",
               }}
               whileTap={{ scale: 0.95 }}
-              // رابط الـ CV الخاص بك على Google Drive
               href="https://drive.google.com/file/d/1YmQ_m-Mw1y6wxFYjXiba4iU-PxXBfoya/view?usp=sharing"
-              target="_blank" // لفتح الملف في صفحة جديدة
-              rel="noreferrer" // لحماية الأمان وتحسين الأداء
+              target="_blank"
+              rel="noreferrer"
               className="flex items-center gap-2 border-2 border-highlight text-highlight font-bold px-7 py-2.5 rounded-full transition-all duration-300 cursor-pointer text-sm"
             >
               <FaDownload className="text-xs" />
