@@ -5,7 +5,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/portfolio/", // 👈 تأكد من هذا السطر بالملي وسيف الملف!
+  base: '/', // 👈 غيرناه هنا علشان يشتغل صح على اللوكال وعلى Vercel
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
