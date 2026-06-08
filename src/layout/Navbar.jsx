@@ -7,7 +7,8 @@ export const Navbar = () => {
 
   return (
     <header className="bg-background border-b border-border relative z-50">
-      <nav className="container mx-auto px-4 py-6 flex justify-between items-center">
+      {/* 💡 أضفنا هنا max-w-6xl للتطابق، واستبدلنا space-x بـ gap-8 لضمان دقة الهوامش */}
+      <nav className="container mx-auto px-4 py-6 flex justify-between items-center max-w-6xl">
         {/* الشعار والاسم */}
         <a href="#" className="group inline-block">
           <div className="flex items-center gap-3">
@@ -31,13 +32,12 @@ export const Navbar = () => {
           </div>
         </a>
 
-        {/* أيقونة القائمة (Hamburger Menu) تظهر فقط في الموبايل وستكون أعلى القائمة الجانبية عند الفتح */}
+        {/* أيقونة القائمة (Hamburger Menu) تظهر فقط في الموبايل */}
         <button
           className="md:hidden text-white hover:text-highlight focus:outline-none transition-colors z-50 relative"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? (
-            // أيقونة (X) للإغلاق
             <svg
               className="w-8 h-8"
               fill="none"
@@ -52,7 +52,6 @@ export const Navbar = () => {
               />
             </svg>
           ) : (
-            // أيقونة القائمة (ثلاث خطوط)
             <svg
               className="w-8 h-8"
               fill="none"
@@ -69,8 +68,8 @@ export const Navbar = () => {
           )}
         </button>
 
-        {/* قائمة الروابط للشاشات الكبيرة (تختفي في الموبايل) */}
-        <ul className="hidden md:flex space-x-8">
+        {/* قائمة الروابط للشاشات الكبيرة - تم تحويلها لـ gap-8 بدلاً من space-x */}
+        <ul className="hidden md:flex items-center gap-8">
           <li>
             <a
               href="#home"
@@ -106,7 +105,7 @@ export const Navbar = () => {
         </ul>
       </nav>
 
-      {/* خلفية معتمة (Overlay) تظهر عند فتح القائمة، وتغلقها عند الضغط في أي مكان فارغ */}
+      {/* خلفية معتمة (Overlay) */}
       {isOpen && (
         <div
           className="md:hidden fixed inset-0 bg-black bg-opacity-60 z-40 transition-opacity"
@@ -114,7 +113,7 @@ export const Navbar = () => {
         />
       )}
 
-      {/* القائمة الجانبية (Sidebar) لشاشات الموبايل - تفتح من اليمين وتتوسطها الروابط */}
+      {/* القائمة الجانبية (Sidebar) لشاشات الموبايل */}
       <div
         className={`md:hidden fixed top-0 right-0 h-full w-[70%] sm:w-[50%] bg-surface border-l border-border z-40 shadow-2xl transition-transform duration-300 ease-in-out flex items-center justify-center ${
           isOpen ? "translate-x-0" : "translate-x-full"
