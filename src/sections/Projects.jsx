@@ -12,12 +12,11 @@ import {
 } from "react-icons/fa";
 
 export const Projects = () => {
-  // بيانات المشاريع - يمكنك تعديل الصور والروابط لاحقاً بسهولة
   const projectsData = [
     {
-      title: "Al-Wahaj Car Rental Platform",
+      title: "M EXANT - Corporate Platform",
       description:
-        "A premium, multi-lingual (Arabic/English) car rental web application designed for a luxury fleet. Features advanced filtering by vehicle segment, elegant dark UI, and seamless animations.",
+        "A premium multi-lingual corporate showcase platform built for M EXANT. Features an elegant dark UI, advanced vehicle fleet segmentation, and responsive layout configurations tailored for modern business needs.",
       tags: [
         "JavaScript ES6",
         "React.js",
@@ -26,9 +25,9 @@ export const Projects = () => {
         "Vite",
         "UI/UX Design",
       ],
-      icon: <FaCar className="text-3xl text-highlight" />,
-      github: "#",
-      live: "https://ali-ellithey.github.io/wajeh-Alealamia/",
+      icon: <FaGlobe className="text-3xl text-highlight" />,
+      github: "https://vercel.com/ali-ellitheys-projects/project-web",
+      live: "https://project-web-eosin-beta.vercel.app/",
     },
     {
       title: "Sales Analytics",
@@ -44,7 +43,6 @@ export const Projects = () => {
       description:
         "A fully-featured, high-performance e-commerce storefront featuring dynamic product filtering, a real-time responsive shopping cart system, optimized image rendering, and a seamless, checkout-ready user experience.",
       tags: ["JavaScript ES6", "CSS", "State Management", "E-Commerce UI"],
-      // تم تغيير الأيقونة إلى عربة تسوق لتتناسب تماماً مع الفكرة
       icon: <FaShoppingCart className="text-3xl text-emerald-400" />,
       github: "https://github.com/Ali-Ellithey/Ecommerce",
       live: "https://ali-ellithey.github.io/Ecommerce/",
@@ -69,15 +67,15 @@ export const Projects = () => {
         "A seamless To-Do application built with robust state architecture. Integrates active status filtering (All, Active, Completed) and LocalStorage persistence to retain user tasks across browser sessions.",
       tags: ["React.js", "State Management", "LocalStorage", "Tailwind CSS"],
       icon: <FaTasks className="text-3xl text-sky-400" />,
-      github: "https://github.com/Ali-Ellithey/my-to-do-list",
-      live: "https://ali-ellithey.github.io/my-to-do-list/", // رابط الـ GitHub Pages المتوقع للمشروع
+      github: "https://vercel.com/ali-ellitheys-projects/my-to-do-list",
+      live: "https://my-to-do-list-woad.vercel.app/",
     },
     {
       title: "Delicious Coffee - Interactive Digital Menu",
       description:
         "A high-end responsive digital restaurant menu designed for premium coffee shops. Focuses on clean visual grid alignments, custom category tab switching, and modern item component rendering.",
       tags: ["React.js", "Tailwind CSS", "UI/UX Layouts", "Responsive Design"],
-      icon: <FaCoffee className="text-3xl text-[#b87333]" />, // لون نحاسي دافئ يناسب ثيم الكافيه
+      icon: <FaCoffee className="text-3xl text-[#b87333]" />,
       github: "https://github.com/Ali-Ellithey/Menu-Delicious-Coffee",
       live: "https://ali-ellithey.github.io/Menu-Delicious-Coffee/",
     },
