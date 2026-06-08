@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { FaDownload } from "react-icons/fa"; // استيراد أيقونة التحميل لزر الـ CV
-import MyProfilePic from "../assets/Alisayed1.jpg"; // استيراد الصورة كمتغير
+import { FaDownload } from "react-icons/fa";
+import MyProfilePic from "../assets/Alisayed1.jpg";
 export const Hero = () => {
   return (
     <section className="bg-background text-white min-h-[80vh] flex items-center overflow-hidden">
