@@ -15,13 +15,13 @@ export const Hero = () => {
           <motion.div
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="w-64 h-auto md:w-72 rounded-xl overflow-hidden border-b-4 border-highlight"
+            className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 aspect-square rounded-2xl overflow-hidden border-b-4 border-highlight"
             style={{ boxShadow: "0 20px 30px -10px #d4af37" }}
           >
             <img
               src={MyProfilePic}
               alt="Ali Sayed"
-              className="w-full h-auto object-contain" // 👈 غيرنا الطول لـ auto والكلاس لـ contain
+              className="w-full h-full object-cover object-top"
             />
           </motion.div>
         </motion.div>
